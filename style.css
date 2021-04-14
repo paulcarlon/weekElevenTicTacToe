@@ -1,0 +1,7 @@
+/* Import font from Google for title */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400&display=swap');
+
+#title {
+  font-family: 'Noto Serif', serif !important;
+  font-size: 5rem;
+}
