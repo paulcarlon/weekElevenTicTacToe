@@ -1,6 +1,6 @@
 let xCards = [];
 let oCards = [];
-const playerOne = 'O';
+const playerOne = '◯';
 const playerTwo = 'X';
 let playersTurn = playerOne;
 let filledSpaces = [];
@@ -20,14 +20,15 @@ boxes.forEach((box) => {
     if (playersTurn === playerOne) {
       let playerOneClick = document.createElement('h1');
       playerOneClick.style.fontSize = '150px';
-      playerOneClick.style.color = 'darkgreen';
-      playerOneClick.classList = 'd-flex justify-content-center mb-3';
-      playerOneClick.innerText = 'O';
+      playerOneClick.style.color = 'green';
+      playerOneClick.classList =
+        'd-flex justify-content-center align-items-center text-center';
+      playerOneClick.innerText = '◯';
       box.appendChild(playerOneClick);
       oCards.push(box.id);
       playersTurn = playerTwo;
       turnAlert.innerHTML =
-        "It's player <span style='color: darkblue; text-shadow: 0px 0px 6px #fff;'>two's</span> turn!";
+        "It's player <span style='color: darkblue; text-shadow: 0px 0px 6px #fff;'>✕</span>'s turn!";
 
       if (
         (oCards.includes('1') &&
@@ -55,19 +56,20 @@ boxes.forEach((box) => {
       ) {
         openModal();
         modalHeader.innerHTML =
-          "<h4>Congratulations, <span class='h3' style='color: green; text-shadow: 0px 0px 6px #fff;'>Player One!</h5>";
+          "<h4>Congratulations, Player <span class='h3' style='color: green; text-shadow: 0px 0px 6px #fff;'>◯</h5><h3>!</h3>";
       }
     } else if (playersTurn === playerTwo) {
       let playerTwoClick = document.createElement('h1');
-      playerTwoClick.innerText = 'X';
+      playerTwoClick.innerText = '✕';
       playerTwoClick.style.fontSize = '150px';
       playerTwoClick.style.color = 'darkblue';
-      playerTwoClick.classList = 'd-flex justify-content-center mb-3';
+      playerTwoClick.classList =
+        'd-flex justify-content-center align-items-center text-center';
       box.appendChild(playerTwoClick);
       xCards.push(box.id);
       playersTurn = playerOne;
       turnAlert.innerHTML =
-        "It's player <span class='h3' style='color: green; text-shadow: 0px 0px 6px #fff;'>one's</span> turn!";
+        "It's player <span class='h3' style='color: green; text-shadow: 0px 0px 6px #fff;'>◯</span>'s turn!";
 
       if (
         (xCards.includes('1') &&
@@ -95,7 +97,7 @@ boxes.forEach((box) => {
       ) {
         openModal();
         modalHeader.innerHTML =
-          "<h4>Congratulations, <span style='color: darkblue; text-shadow: 0px 0px 6px #fff;'>Player Two!</span></h4>";
+          "<h4>Congratulations, Player <span class='h3' style='color: darkblue; text-shadow: 0px 0px 6px #fff;'>✕</h5><h3>!</h3>";
       }
     }
   });
@@ -124,7 +126,7 @@ function freshSlate() {
 
   playersTurn = playerOne;
   turnAlert.innerHTML =
-    "It's player <span style='color: green; text-shadow: 0px 0px 6px #fff;'>one's</span> turn!";
+    "It's player <span style='color: green; text-shadow: 0px 0px 6px #fff;'>◯</span>'s turn!";
   ticTacModal.style.display = 'none';
   ticTacModal.classList.remove('show');
   turnDisplay.style.display = 'block';
